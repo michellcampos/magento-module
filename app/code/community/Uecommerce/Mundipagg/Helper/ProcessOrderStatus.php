@@ -124,7 +124,7 @@ class Uecommerce_Mundipagg_Helper_ProcessOrderStatus extends Mage_Core_Helper_Ab
      * @param string $status
      * @return string OK|KO
      */
-    private function createInvoice($order, $data, $totalPaid, $status) {
+    public function createInvoice($order, $data, $totalPaid, $status) {
         $invoice = Mage::getModel('sales/service_order', $order)->prepareInvoice();
         $helperLog = new Uecommerce_Mundipagg_Helper_Log(__METHOD__);
         $returnMessageLabel = "Order #{$order->getIncrementId()}";
